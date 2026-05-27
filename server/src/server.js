@@ -9,6 +9,7 @@ const morgan = require('morgan');
 
 const { ping } = require('./config/db');
 const authRoutes = require('./routes/auth');
+const authGoogleRoutes = require('./routes/auth-google');
 const candidatesRoutes = require('./routes/candidates');
 const sedesRoutes = require('./routes/sedes');
 const dashboardRoutes = require('./routes/dashboard');
@@ -49,6 +50,7 @@ app.get('/api/states', (_req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/auth/google', authGoogleRoutes);
 app.use('/api/candidates', candidatesRoutes);
 app.use('/api/sedes', sedesRoutes);
 app.use('/api/dashboard', dashboardRoutes);
